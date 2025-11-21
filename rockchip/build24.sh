@@ -70,6 +70,10 @@ PACKAGES="$PACKAGES luci-i18n-ttyd-zh-cn"
 PACKAGES="$PACKAGES luci-app-openclash"
 # PACKAGES="$PACKAGES luci-i18n-passwall-zh-cn"
 # PACKAGES="$PACKAGES luci-i18n-homeproxy-zh-cn"
+# 网络工具
+PACKAGES="$PACKAGES luci-i18n-wol-zh-cn"           # 网络唤醒
+PACKAGES="$PACKAGES luci-i18n-upnp-zh-cn"          # UPnP 自动端口映射
+PACKAGES="$PACKAGES luci-i18n-ddns-zh-cn"          # 动态DNS
 # 判断是否需要编译 Docker 插件
 if [ "$INCLUDE_DOCKER" = "yes" ]; then
     PACKAGES="$PACKAGES luci-i18n-dockerman-zh-cn"
