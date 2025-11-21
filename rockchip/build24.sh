@@ -49,20 +49,27 @@ fi
 echo "$(date '+%Y-%m-%d %H:%M:%S') - 开始构建固件..."
 echo "查看repositories.conf信息——————"
 cat repositories.conf
-# 定义所需安装的包列表 下列插件你都可以自行删减
+# 定义所需安装的包列表
 PACKAGES=""
+# 基础工具
 PACKAGES="$PACKAGES curl"
 PACKAGES="$PACKAGES openssh-sftp-server"
+# 磁盘管理
 PACKAGES="$PACKAGES luci-i18n-diskman-zh-cn"
+# 包管理器
 PACKAGES="$PACKAGES luci-i18n-package-manager-zh-cn"
+# 防火墙
 PACKAGES="$PACKAGES luci-i18n-firewall-zh-cn"
+# 主题相关
 PACKAGES="$PACKAGES luci-theme-argon"
 PACKAGES="$PACKAGES luci-app-argon-config"
 PACKAGES="$PACKAGES luci-i18n-argon-config-zh-cn"
+# 网页终端
 PACKAGES="$PACKAGES luci-i18n-ttyd-zh-cn"
-PACKAGES="$PACKAGES luci-i18n-passwall-zh-cn"
+# 代理工具（三选一或按需选择）
 PACKAGES="$PACKAGES luci-app-openclash"
-PACKAGES="$PACKAGES luci-i18n-homeproxy-zh-cn"
+# PACKAGES="$PACKAGES luci-i18n-passwall-zh-cn"
+# PACKAGES="$PACKAGES luci-i18n-homeproxy-zh-cn"
 # 判断是否需要编译 Docker 插件
 if [ "$INCLUDE_DOCKER" = "yes" ]; then
     PACKAGES="$PACKAGES luci-i18n-dockerman-zh-cn"
